@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Kafka - Redis - PostgreSQL Demo</title>
+	    
+	    <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+	
+	<div class="diagram">
+	    <h2>Event Driven Demo</h2>
+	
+	    <button onclick="sendEvent()">Send Event</button>
+	    <button onclick="readState()">Read Event</button>
+	
+	    <p id="result"></p>
+	</div>
+
+	
+	<script>
+	    function sendEvent() {
+	        fetch('http://localhost:8080/api/first-button', {
+	            method: 'POST'
+	        })
+	        .then(res => res.text())
+	        .then(data => {
+	            document.getElementById("result").innerText = data;
+	        });
+	    }
+	
+	    function readEvent() {
+	        fetch('http://localhost:8080/api/last-event')
+	        .then(res => res.text())
+	        .then(data => {
+	            document.getElementById("result").innerText = data;
+	        });
+	    }
+	</script>
+	
+	</body>
+</html>
