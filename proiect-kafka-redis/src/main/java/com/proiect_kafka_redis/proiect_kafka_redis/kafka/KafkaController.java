@@ -2,6 +2,7 @@ package com.proiect_kafka_redis.proiect_kafka_redis.kafka;
 
 import java.time.Instant;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

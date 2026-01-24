@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+	    <title>WebSocketDemo</title>
+	</head>
+	
+	<body>
+	
+		<h2>WebSocket Test</h2>
+	
+		<button onclick="connectWSD()">Connect</button>
+		<button onclick="sendMsg()">Send</button>
+	
+	<script>
+		let ws;
+	
+		function connectWSD() {
+	    	ws = new WebSocket("ws://localhost:8080/app");
+	    	ws.onopen = () => console.log("Conectat");
+	    	ws.onmessage = (e) => console.log("Server:", e.data);
+	    	ws.onclose = () => console.log("Inchis");
+		}
+	
+		function sendMsg() {
+	    	ws.send("Hello World!");
+		}
+	
+	</script>
+	
+	</body>
+</html>
