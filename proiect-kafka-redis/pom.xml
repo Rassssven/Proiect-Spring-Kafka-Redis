@@ -31,7 +31,7 @@
             <exclusions>
             	<exclusion>
             		<groupId>org.springframework.boot</groupId>
-            		<artiiactId>spring-boot-starter-logging</artiiactId>
+            		<artifactId>spring-boot-starter-logging</artifactId>
             	</exclusion>
             </exclusions>
         </dependency>
