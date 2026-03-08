@@ -7,7 +7,7 @@ import com.proiect_kafka_redis.proiect_kafka_redis.db.EventEntity;
 import com.proiect_kafka_redis.proiect_kafka_redis.db.EventRepository;
 import com.proiect_kafka_redis.proiect_kafka_redis.redis.RedisEventService;
 
-@Service
+//@Service
 public class EventConsumer {
 	
 	private final EventRepository eventRepo;

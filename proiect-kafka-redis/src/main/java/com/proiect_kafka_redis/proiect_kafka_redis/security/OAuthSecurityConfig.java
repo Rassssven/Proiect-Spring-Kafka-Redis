@@ -1,4 +1,4 @@
-package com.proiect_kafka_redis.proiect_kafka_redis;
+package com.proiect_kafka_redis.proiect_kafka_redis.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

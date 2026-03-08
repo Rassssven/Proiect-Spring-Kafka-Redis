@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/"
+             xmlns:camunda="http://camunda.org/schema/1.0/dmn"
+             id="deliveryDecision"
+             name="Food Delivery"
+             namespace="http://camunda.org/schema/1.0/dmn">
+
+  <decision id="deliveryTypeDecision" name="Delivery Type Decision">
+    <decisionTable>
+
+      <input id="distance">
+        <inputExpression typeRef="double">
+          <text>distance</text>
+        </inputExpression>
+      </input>
+
+      <input id="orderValue">
+        <inputExpression typeRef="double">
+          <text>orderValue</text>
+        </inputExpression>
+      </input>
+
+      <output name="deliveryType" typeRef="string"/>
+
+      <rule>
+        <inputEntry><text>&lt;= 3</text></inputEntry>
+        <inputEntry><text>&gt;= 30</text></inputEntry>
+        <outputEntry><text>"FREE_DELIVERY"</text></outputEntry>
+      </rule>
+
+      <rule>
+        <inputEntry><text>&lt;= 3</text></inputEntry>
+        <inputEntry><text>&lt; 30</text></inputEntry>
+        <outputEntry><text>"STANDARD"</text></outputEntry>
+      </rule>
+
+      <rule>
+        <inputEntry><text>&gt; 3</text></inputEntry>
+        <inputEntry><text>-</text></inputEntry>
+        <outputEntry><text>"LONG_DISTANCE"</text></outputEntry>
+      </rule>
+
+    </decisionTable>
+  </decision>
+
+</definitions>

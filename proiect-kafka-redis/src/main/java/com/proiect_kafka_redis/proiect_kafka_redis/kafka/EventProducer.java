@@ -3,7 +3,7 @@ package com.proiect_kafka_redis.proiect_kafka_redis.kafka;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public class EventProducer {
 	
 	private final KafkaTemplate<String, KafkaEvent> kafkaTemp;
