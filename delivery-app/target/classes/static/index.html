@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kafka - Redis - PostgreSQL Demo</title>
+
+	<style>
+	
+	body{
+	    margin:0;
+	    height:100vh;
+	    display:flex;
+	    justify-content:center;
+	    align-items:center;
+	    font-family: Arial, sans-serif;
+	
+	    background: linear-gradient(135deg,#5f7c8a,#8aa4b3);
+	}
+	
+	.container{
+	    background:#ffffff;
+	    padding:40px;
+	    border-radius:12px;
+	    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+	    text-align:center;
+	    width:320px;
+	}
+	
+	h2{
+	    margin-bottom:30px;
+	    color:#1f3a5f;
+	}
+	
+	button{
+	    width:150px;
+	    padding:12px;
+	    margin:10px;
+	    border:none;
+	    border-radius:6px;
+	    background:#1f4e79;
+	    color:white;
+	    font-size:15px;
+	    cursor:pointer;
+	    transition:0.2s;
+	}
+	
+	button:hover{
+	    background:#163a5c;
+	    transform:scale(1.05);
+	}
+	
+	#result{
+	    margin-top:20px;
+	    color:#333;
+	}
+	
+</style>
+	
+</head>	
+<body>
+	
+	<div class="container">
+		<h2>Event Driven Demo</h2>
+		
+		<button onclick="sendEvent()">Send Event</button>
+		<button onclick="readEvent()">Read Event</button>
+		
+		<p id="result"></p>
+	</div>
+	
+	<script>
+	    function sendEvent() {
+	        fetch('http://localhost:8080/api/first-button', {
+	            method: 'POST'
+	        })
+	        .then(res => res.text())
+	        .then(data => {
+	            document.getElementById("result").innerText = data;
+	        });
+	    }
+	
+	    function readEvent() {
+	        fetch('http://localhost:8080/api/last-event')
+	        .then(res => res.text())
+	        .then(data => {
+	            document.getElementById("result").innerText = data;
+	        });
+	    }
+	</script>
+	
+	</body>
+</html>
