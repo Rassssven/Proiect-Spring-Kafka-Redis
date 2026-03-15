@@ -31,13 +31,12 @@ public class Delivery {
 		
 	}
 
-	public Delivery(int id, User user, Courier courier, String status, LocalDateTime createdAt) {
+	public Delivery(User user, Courier courier, String status) {
 		super();
-		this.id = id;
 		this.user = user;
 		this.courier = courier;
 		this.status = status;
-		this.createdAt = createdAt;
+		this.createdAt = LocalDateTime.now();
 	}
 
 	public int getId() {

@@ -22,9 +22,8 @@ public class Courier {
 		
 	}
 
-	public Courier(int id, String name, String vehicleType) {
+	public Courier(String name, String vehicleType) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.vehicleType = vehicleType;
 	}

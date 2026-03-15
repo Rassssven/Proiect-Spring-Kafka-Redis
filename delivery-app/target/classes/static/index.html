@@ -70,20 +70,21 @@
 	
 	<script>
 	    function sendEvent() {
-	        fetch('http://localhost:8080/api/first-button', {
+	        fetch('/simulation/movement', {
 	            method: 'POST'
 	        })
 	        .then(res => res.text())
-	        .then(data => {
-	            document.getElementById("result").innerText = data;
-	        });
+	        .then(data => console.log(data));
 	    }
 	
 	    function readEvent() {
-	        fetch('http://localhost:8080/api/last-event')
-	        .then(res => res.text())
+	        fetch('/tracking/1')
+	        .then(res => res.json())
 	        .then(data => {
-	            document.getElementById("result").innerText = data;
+	            document.getElementById("result").innerText = 
+	            	"Lat: " + data.latitude +
+	            	" Lng: " + data.longitude +
+	            	" Time: " + data.timestamp;
 	        });
 	    }
 	</script>
