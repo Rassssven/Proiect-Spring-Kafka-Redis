@@ -10,6 +10,7 @@ public class DeliveryLocationUpdatedEvent {
 	private double lng;
 	private LocalDateTime timestamp;
 	
+	
 	public DeliveryLocationUpdatedEvent(Long deliveryId, Long courierId, double lat, double lng,
 			LocalDateTime timestamp) {
 		super();
@@ -18,6 +19,10 @@ public class DeliveryLocationUpdatedEvent {
 		this.lat = lat;
 		this.lng = lng;
 		this.timestamp = timestamp;
+	}
+	
+	public DeliveryLocationUpdatedEvent() {
+
 	}
 
 	public Long getDeliveryId() {
